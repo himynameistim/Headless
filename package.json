@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-website",
+  "version": "1.0.0",
+  "description": "A multi page website with navigation menu built for Nuxt and Prismic",
+  "author": "Phil Snow",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "@nuxtjs/prismic": "^1.2.4",
+    "cookies": "^0.8.0",
+    "nuxt": "^2.14.6",
+    "prismic-javascript": "^2.7.1",
+    "prismic-vue": "^2.0.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.2",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.41.5"
+  }
+}
