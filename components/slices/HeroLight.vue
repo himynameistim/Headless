@@ -17,7 +17,7 @@
             @foreach (var link in Model.Link)
             {-->
               <p>
-              <prismic-link :field="slice.primary.button_link">{{ $prismic.asText(slice.primary.button_text) }}</prismic-link>
+              <prismic-link :field="slice.primary.button_link" class="a-btn btn-primary">{{ $prismic.asText(slice.primary.button_text) }}</prismic-link>
               </p>
             <!--}-->
           </div>
@@ -41,14 +41,14 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss">
 // COMPONENT [ HERO ] #################################################################################################
 
 // A. MOBILE STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // A.1. HERO GLOBAL --------------------------------------
 
-.o-hero { position: relative; /*background-color: $white; */
+.o-hero { position: relative;
   p, .a-p { font-size: 18px; line-height: 28px; } 
 }
 

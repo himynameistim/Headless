@@ -1,0 +1,188 @@
+// ELEMENTS [ 0.1. GLOBAL ] ###########################################################################################
+
+// A. MOBILE STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// A.1. GLOBAL STYLING ------------------------------------
+
+.o-block { padding: 30px 10px; 
+  &:first-of-type { padding-top: 60px; }
+  &:last-of-type { padding-bottom: 60px; }  
+
+  // IF COMPONENT HAS A BG COLOR
+  &._has-bg { padding: 60px 10px; }
+}
+
+.o-padding-top-1 { padding-top: 60px; }
+.o-padding-bottom-1 { padding-bottom: 30px; }
+.o-margin-bottom { margin-bottom: 30px; }
+
+body .bg-light { background-color: $grey!important; }
+body .bg-dark-blue-gradient {
+    background: linear-gradient(126.84deg, #282447 0%, #3868FF 179.93%) !important; color: $white;
+    h1, h2, h3, h4, h5, h6, p { color: $white;}
+}
+body .bg-dark-blue-gradient-alternate {
+  .btn-primary { background-color: $blue-28;
+    &:hover, &:focus, &:active { 
+      &:not(:disabled), &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus { 
+        background-color: desaturate( $blue-28, 15% );
+      }
+    }
+    &:active { background-color: desaturate( $blue-38, 30% ); }}
+}
+body .bg-light-blue-gradient {
+    background: linear-gradient(103.34deg, #3868FF 0%, #0032D1 106.14%) !important; color: $white;
+    h1, h2, h3, h4, h5, h6, p { color: $white;}
+    
+}
+body .bg-light-blue-gradient-alternate {
+  .btn-primary { background-color: $blue-38;
+    &:hover, &:focus, &:active { 
+      &:not(:disabled), &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus { 
+        background-color: desaturate( $blue-38, 15% );
+      }
+    }
+    &:active { background-color: desaturate( $blue-38, 30% ); }}
+}
+body .bg-purple-gradient {
+    background: linear-gradient(103.2deg, #9838FE 0%, #6501D0 108.78%) !important; color: $white;
+    h1, h2, h3, h4, h5, h6, p { color: $white;}
+}
+body .bg-purple-gradient-alternate {
+  .btn-primary { background-color: $purple-98;
+    &:hover, &:focus, &:active { 
+      &:not(:disabled), &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus { 
+        background-color: desaturate( $purple-98, 15% );
+      }
+    }
+    &:active { background-color: desaturate( $blue-38, 30% ); }}
+}
+body .bg-green-gradient {
+    background: linear-gradient(103.26deg, #01A88F 0%, #017F6C 106.13%) !important; color: $white;
+    h1, h2, h3, h4, h5, h6, p { color: $white;}
+}
+body .bg-green-gradient-alternate {
+    .btn-primary { background-color: $green-01;
+      &:hover, &:focus, &:active { 
+        &:not(:disabled), &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus { 
+          background-color: desaturate( $green-01, 15% );
+        }
+      }
+      &:active { background-color: desaturate( $blue-38, 30% ); }}
+}
+body .bg-dark {
+    background: #282447 !important;
+    h1, h2, h3, h4, h5, h6, p { color: $white;}
+}
+
+.component-wrap {
+    > div > *:not(section) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+// A.1. END -----------------------------------------------
+
+// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// B. MIN-WIDTH: 576px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xs-up) {}
+
+// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($sm-up) {
+
+  .o-block { padding: 40px 0px; 
+    &:first-of-type { padding-top: 80px; }
+    &:last-of-type { padding-bottom: 80px; }
+
+    // IF COMPONENT HAS A BG COLOR
+    &._has-bg { padding: 80px 0px; }
+  }
+
+  .o-padding-top-1 { padding-top: 80px; }
+  .o-padding-bottom-1 { padding-bottom: 40px; }
+  .o-margin-bottom { margin-bottom: 40px; }
+
+  .component-wrap {
+    > div > *:not(section) { margin-left: 0px; margin-right: 0px; }
+  }
+  .col-md-6.column.component-wrap {
+    &:first-child { padding-right: 35px; }
+  }
+
+}
+
+// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($md-up) {
+
+  .o-block { padding: 50px 0px;  
+    &:first-of-type { padding-top: 100px; }
+    &:last-of-type { padding-bottom: 100px; }
+
+    // IF COMPONENT HAS A BG COLOR
+    &._has-bg { padding: 100px 0px; }
+  }
+
+  .o-padding-top-1 { padding-top: 100px; }
+  .o-padding-bottom-1 { padding-bottom: 50px; }
+  .o-margin-bottom { margin-bottom: 50px; }
+
+}
+
+// D. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// E. MIN-WIDTH: 1024px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($mdl-up) {}
+
+// E. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// F. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($lg-up) {
+
+  .o-block { padding: 60px 0px;  
+    &:first-of-type { padding-top: 120px; }
+    &:last-of-type { padding-bottom: 120px; }
+
+    // IF COMPONENT HAS A BG COLOR
+    &._has-bg { padding: 120px 0px; }
+  }
+
+  .o-padding-top-1 { padding-top: 120px; }
+  .o-padding-bottom-1 { padding-bottom: 60px; }
+  .o-margin-bottom { margin-bottom: 60px; }
+
+}
+
+// F. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// G. MIN-WIDTH: 1400px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xlg-up) {
+  
+  .o-block { padding: 70px 0px;  
+    &:first-of-type { padding-top: 140px; }
+    &:last-of-type { padding-bottom: 140px; }
+
+    // IF COMPONENT HAS A BG COLOR
+    &._has-bg { padding: 140px 0px; }
+  } 
+
+  .o-padding-top-1 { padding-top: 140px; }
+  .o-padding-bottom-1 { padding-bottom: 70px; }
+  .o-margin-bottom { margin-bottom: 70px; }
+
+}
+
+// G. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################

@@ -1,9 +1,26 @@
 <template>
-  <footer class="footer">
-    <a href="https://prismic.io" target="_blank" rel="noopener">
-      <img class="logo" src="../assets/img/prismic-logo.svg" alt="Prismic">
-    </a>
-  </footer>
+    <footer class="o-footer">
+        <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-6 m-footer-col _logo">
+                <a class="a-footer-logo" href="/"><img class="a-img" src="../assets/img/prismic-logo.svg" /></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 m-copyright-col">
+                <p class="a-p _small a-copyright">&copy; SIMPLE </p>
+
+                <div class="m-link-group">
+                    
+                </div>
+
+                <div class="m-social-group">
+                    
+                </div>
+              </div>
+            </div>
+        </div>
+    </footer>
 </template>
 
 <script>
@@ -11,14 +28,3 @@ export default {
   name: 'FooterPrismic'
 }
 </script>
-
-<style lang="sass" scoped>
-.footer
-  padding: 40px 0
-  margin: 0 auto
-  text-align: center
-  border-top: 1px solid #DADADA
-
-.logo
-  width: 100px
-</style>

@@ -1,0 +1,103 @@
+// ELEMENTS [ 0.3. FOOTER ] ###########################################################################################
+
+// A. MOBILE STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// A.1. GLOBAL STYLING ------------------------------------
+
+.o-footer { background-color: $white; padding: 80px 10px 60px 10px;
+
+  .m-footer-col { margin-bottom: 40px;
+    .a-footer-logo { display: block; margin-bottom: 20px; }
+
+    .a-footer-heading { color: $grey-0D; margin-bottom: 20px; } 
+    .a-link { display: block; padding-bottom: 20px; color: $grey-0D; }
+
+    // COLUMN ORDERING
+    &._sitemap { order: 1; }
+    &._partners { order: 2; }
+    &._help { order: 3; }
+  }
+
+  .m-copyright-col { display: flex; flex-wrap: wrap; align-content: center;
+    .a-copyright { color: $grey-0D; order: 3; width: 100%; text-align: center; }
+
+    .m-link-group { order: 1; width: 100%; text-align: center;
+      .a-link { margin: 0px 20px; color: $grey-0D; }
+    }
+
+    .m-social-group { padding: 30px 0px; order: 2; width: 100%; text-align: center; } 
+  }
+}
+
+// A.1. END -----------------------------------------------
+
+// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// B. MIN-WIDTH: 576px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xs-up) {}
+
+// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($sm-up) {
+  .o-footer { padding: 100px 0px 0px 0px; 
+
+    .m-footer-col {
+      // COLUMN ORDERING
+      &._sitemap { order: 3; }
+      &._partners { order: 2; }
+      &._help { order: 1; }
+    }
+
+    .m-copyright-col { 
+      flex-wrap: nowrap; align-items: flex-end; position: relative; padding-top: 30px; 
+      padding-bottom: 30px; margin-top: 40px;
+
+      &:before {
+        content: ''; position: absolute; top: 0px; left: 15px; right: 15px; height: 1px; background-color: $blue-36;
+      }
+
+      .a-copyright { order: 1; width: auto; text-align: left; margin-right: 20px }
+      .m-link-group { order: 2; width: auto; text-align: left; }
+      .m-social-group { order: 3; padding: 0px; width: auto; margin-left: auto; }
+    }
+  }
+}
+
+// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($md-up) {
+  
+  .o-footer { padding: 120px 0px 0px 0px; 
+    .m-copyright-col { 
+      .a-copyright { margin-right: 40px }
+    }
+  }
+
+}
+
+// D. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// E. MIN-WIDTH: 1024px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($mdl-up) {}
+
+// E. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// F. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($lg-up) {}
+
+// F. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// G. MIN-WIDTH: 1400px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xlg-up) {}
+
+// G. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################

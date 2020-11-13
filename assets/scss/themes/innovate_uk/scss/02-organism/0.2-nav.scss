@@ -1,0 +1,277 @@
+// ELEMENTS [ 0.2. NAV ] ##############################################################################################
+
+// A. MOBILE STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// A.1. GLOBAL STYLING ------------------------------------
+
+.o-nav { 
+  position: fixed; border-bottom: 1px solid $grey-de; z-index: 10; background-color: $white; top: 0px; left: 0px; right: 0px; max-height: 70px;
+
+  .container { background-color: inherit; } 
+
+  .nav-wrap { display: flex; align-content: center; align-items: center; padding: 20px 10px; background-color: inherit;
+
+    .a-nav-logo { position: relative; margin-right: auto; width: 100%; max-width: 160px; z-index: 2; }
+
+    .m-nav-list { 
+      overflow: hidden; height: 0vh; position: fixed; top: 70px; margin: 0px; left: 0px; right: 0px;
+      transition: all ease-in-out 0.3s; background-color: inherit; padding: 0px; transition-delay: 0.5s; 
+      display: flex; flex-direction: column; overflow-y: auto; bottom: 0px; 
+
+      > li { 
+        list-style: none; width: 100%; display: block; opacity: 0; transform: translateX(20px); 
+        transition: all 0.3s; $time-offset-close: 0;
+
+        @for $i from 5 through 1 {
+          &:nth-child(#{$i}) {
+            $time-offset-close: $time-offset-close + 0.1; transition-delay: #{$time-offset-close}s;
+            .a-nav-link { transition-delay: #{$time-offset-close}s; } 
+          }
+        }
+        &:first-child { padding-top: 20px; } 
+        &:last-child { margin-top: auto; background-color: $yellow-ff; }
+
+        .a-nav-link { 
+          padding: 15px 40px; display: block; font-family: $proxima-bold; font-size: 22px; outline: none;
+          line-height: 36px; letter-spacing: 1px; color: $grey-15; text-decoration: none;
+          font-weight: bold; max-width: 540px; margin: 0 auto;
+
+          &._sub-nav { padding-bottom: 0px; } 
+        } 
+
+        .a-nav-cta {
+          width: 100%; margin: 0 auto; text-align: left; font-size: 22px; line-height: 36px; align-items: center; max-width: 540px;
+          letter-spacing: 1px; border-radius: 0px; display: flex; height: 81px; padding: 10px 40px; align-content: center; 
+        }  
+
+        // SUB NAV
+        ul { padding: 0px 0px 25px 0px; margin: 0 auto; max-width: 540px;
+          li { list-style: none; width: 100%; display: block;
+            .a-nav-sub-link { 
+              padding: 0px 60px; display: block; font-family: $proxima-bold; font-weight: bold;  margin-top: 20px;
+              line-height: 26px; letter-spacing: 1px; color: $grey-67; text-decoration: none; font-size: 19px;
+            } 
+          }
+        }
+      }
+    }  
+
+    .a-nav-toggle { 
+      position: relative; height: 25px; width: 25px; display: inline-block; cursor: pointer; margin-left: 30px; z-index: 2;
+
+      span {
+        display: block; width: 100%; height: 2px; position: absolute; top: 50%;
+        background-color: $black; transform: translate(0, -50%); transition: opacity 0.3s 0.3s;
+      }
+      &:before,
+      &:after {
+        content: ''; display: block; width: 100%; height: 2px; position: absolute;
+        background-color: $black; transition: transform 0.3s, top 0.3s 0.3s, bottom 0.3s 0.3s;
+      }
+      &:before { top: 6px; }
+      &:after { bottom: 6px; }
+  
+      &._active {
+        span { opacity: 0; transition: opacity 0.3s; }
+        &:before,
+        &:after { background-color: $black; }
+        &:before { top: calc(50% - 1px); transform: rotate(45deg); }
+        &:after { bottom: calc(50% - 1px); transform: rotate(-45deg); }
+        &:before,
+        &:after { transition: top 0.3s, bottom 0.3s, transform 0.3s 0.3s; }
+      }
+    }
+  }
+
+  &._active {
+    .nav-wrap {
+      .m-nav-list { height: calc(100vh - 70px); transition-delay: 0s; 
+        li { opacity: 1; transform: translateX(0px); $time-offset-close: 0.3;
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              $time-offset-close: $time-offset-close + 0.1; transition-delay: #{$time-offset-close}s;
+              .a-nav-link { transition-delay: #{$time-offset-close}s; }
+            }
+          }
+        }
+      } 
+    }
+  }
+
+  // Alternate - dark version 
+  &._alternate { border-color: $grey-15; background-color: $grey-15;
+    .nav-wrap {
+      .m-nav-list {
+        > li {
+          .a-nav-link { color: $white; }
+
+          // SUB NAV
+          ul {
+            li {
+              .a-nav-sub-link { color: $white; } 
+            }
+          }
+        }
+      }
+      .a-nav-toggle { 
+        span { background-color: $white; }
+        &:before,
+        &:after { background-color: $white; }  
+        &._active {
+          &:before,
+          &:after { background-color: $white; } 
+        }
+      }
+    }
+  }
+}
+
+// A.1. END -----------------------------------------------
+
+// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// B. MIN-WIDTH: 576px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xs-up) {}
+
+// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($sm-up) {
+
+  .o-nav {
+    .nav-wrap { padding: 20px 0px;
+      .m-nav-list {
+        > li { 
+          .a-nav-link { max-width: 720px; } 
+          .a-nav-cta { max-width: 720px; }  
+          // SUB NAV
+          ul { max-width: 720px; }
+        }
+      }
+    }
+  }
+
+}
+
+// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($md-up) {
+
+  .o-nav { max-height: none; height: auto; display: flex; width: 100%; align-items: center;
+    .nav-wrap { padding: 0px;
+      .a-nav-logo { max-width: 200px; } 
+
+      .m-nav-list { 
+        overflow: visible; height: auto; position: relative; top: auto; left: auto; right: auto; width: 100%;
+        bottom: auto; transition: none; transition-delay: 0s; display: flex; flex-direction: inherit; 
+        align-content: center; align-items: center;
+
+        > li { position: relative; opacity: 1; transform: translateX(0px); transition: none!important; transition-delay: 0s; width: auto;
+
+          &:first-child { padding-top: 0px; margin-left: auto; }
+          &:last-child { margin-top: 0px; background-color: transparent; margin-left: auto; }
+          
+          &:hover ul { opacity: 1; top: 100%; transition: all ease-in-out 0.3s; pointer-events: all; } 
+
+          .a-nav-link { 
+            padding: 0px; display: flex; font-size: 16px; line-height: 24px; letter-spacing: 0px;
+            color: $black; max-width: none; margin: 0px 15px; transition: none!important; max-height: 75px;
+            height: 75px; border-top: 3px solid transparent; align-content: center; align-items: center;
+
+            &._sub-nav { padding: 5px;  }
+            &._active { border-color: $grey-15; }
+          } 
+
+          .a-nav-cta {
+            width: auto; margin: 0px; justify-content: center; font-size: 16px; line-height: 24px; align-items: center; max-width: none;
+            letter-spacing: 0px; border-radius: 4px; display: flex; height: 48px; padding: 12px 12px; align-content: center; min-width: 141px;
+          }  
+
+          // SUB NAV
+          ul { 
+            opacity: 0; position: absolute; left: 50%; transform: translateX(-50%); top: 110%; max-width: 100%; border: 1px solid $grey-de;
+            min-width: 200px; width: 100%; background-color: $white; border-radius: 0px; padding: 5px 0px; pointer-events: none;
+
+            &:before {
+              content: ""; border-color: transparent transparent $grey-de; border-style: solid; border-width: 10px;
+              width: 0; height: 0; position: absolute; top: -20px; left: 0px; right: 0px; margin: 0 auto;
+            }
+
+            &:after {
+              content:""; border-color: transparent transparent #fff; border-style: solid; border-width: 9px;
+              width: 0; height: 0; position: absolute; top: -18px; left: 0px; right: 0px; margin: 0 auto;
+            }
+
+            li { list-style: none; width: auto; display: block;
+              .a-nav-sub-link { font-size: 14px; line-height: 20px; margin: 0px; padding: 10px; text-align: center; color: $black; }
+            }
+          }
+        }
+      }  
+
+      .a-nav-toggle { display: none; }
+    }
+
+    &._active {
+      .nav-wrap {
+        .m-nav-list { height: auto; transition-delay: 0s; 
+          li { opacity: 1; transform: translateX(0px); }
+        } 
+      }
+    }    
+
+    // Alternate - dark version 
+    &._alternate {
+      .nav-wrap {
+        .m-nav-list {
+          > li {
+            .a-nav-link._active { border-color: $white; }
+            // SUB NAV
+            ul { background-color: $grey-15; border-left: 0px; border-right: 0px; border-bottom: 0px; }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// D. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// E. MIN-WIDTH: 1024px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($mdl-up) {}
+
+// E. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// F. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($lg-up) {
+
+  .o-nav { 
+    .nav-wrap {
+      .a-nav-logo { max-width: 240px; } 
+
+      .m-nav-list {
+        > li {
+          .a-nav-link { margin: 0px 30px; }
+        }
+      }
+    }
+  }
+
+}
+
+// F. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// G. MIN-WIDTH: 1400px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xlg-up) {}
+
+// G. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################

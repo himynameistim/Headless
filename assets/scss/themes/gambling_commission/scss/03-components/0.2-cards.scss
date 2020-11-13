@@ -1,0 +1,45 @@
+.o-cards {   
+    .o-card-wrap { 
+      .m-card { 
+
+        border-radius: 0; box-shadow: none; 
+  
+        .card-header {
+            height: 130px;
+        }
+  
+        .card-body { 
+            border-left: 1px solid $grey-dd;
+            border-right: 1px solid $grey-dd;
+        }
+  
+        .card-footer {
+          background-color: $blue-28; padding:0;
+
+          .a-next {
+              color: $white; display: block;
+              padding: 15px 30px;
+
+              &:after {
+                  height: auto; content: '>'; text-align: right; margin-right: 30px;
+              }
+          }
+        }
+      }
+    }
+  }
+  
+
+  // D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($md-up) {
+
+    .o-cards { 
+      .o-card-wrap {
+        .m-card {
+          .card-header { height: 150px; }
+        }
+      }
+    }
+  
+  }

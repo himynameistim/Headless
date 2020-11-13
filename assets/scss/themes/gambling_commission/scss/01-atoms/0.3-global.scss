@@ -1,0 +1,284 @@
+// ELEMENTS [ 0.3. GLOBAL ] ###########################################################################################
+
+// A. MOBILE STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// A.1. GLOBAL STYLING ------------------------------------
+
+html {}
+
+
+body { overflow-x: hidden; padding-top: 70px;
+  .no-gutters { padding: 0px; 
+    > .row { margin-right: 0; margin-left: 0;
+      > .col,
+      > [class*="col-"] { padding-right: 0; padding-left: 0;
+      }
+    }
+  }
+
+  .container .container { padding: 0px; }
+  hr { margin: 30px 10px; border-color: $grey-c4c; }
+
+  .caption { display: none; }
+
+  .img-shadow-1 {
+    img { box-shadow: 0px 1px 2px rgba($black, 0.06), 0px 1px 3px rgba($black, 0.1); border-radius: 4px; }
+  }
+}
+
+
+// A.1. END -----------------------------------------------
+
+// A.2. RESPONSIVE FONTS ----------------------------------
+
+// font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+
+$view-min-xs:     0;
+$view-max-xs:     767;
+
+$view-min-sm:     768;
+$view-max-sm:     991;
+
+$view-min-md:     992;
+$view-max-md:     1920;
+
+// H1
+$h1-min-xs:       38;
+$h1-max-xs:       40;
+$h1-min-sm:       42;
+$h1-max-sm:       44;
+$h1-min-md:       48;
+$h1-max-md:       50;
+$h1-max:          52;
+
+// H2
+$h2-min-xs:       32;
+$h2-max-xs:       33;
+$h2-min-sm:       34;
+$h2-max-sm:       36;
+$h2-min-md:       38;
+$h2-max-md:       40;
+$h2-max:          42;
+
+// H3
+$h3-min-xs:       24;
+$h3-max-xs:       25;
+$h3-min-sm:       26;
+$h3-max-sm:       28;
+$h3-min-md:       30;
+$h3-max-md:       31;
+$h3-max:          32;
+
+// H4
+$h4-min-xs:       21;
+$h4-max-xs:       21;
+$h4-min-sm:       22;
+$h4-max-sm:       22;
+$h4-min-md:       24;
+$h4-max-md:       24;
+$h4-max:          24;
+
+// P
+$p-min-xs:        16;
+$p-max-xs:        16;
+$p-min-sm:        16;
+$p-max-sm:        16;
+$p-min-md:        17;
+$p-max-md:        17;
+$p-max:           18;
+
+// A.2. END -----------------------------------------------
+
+// A.3. TYPOGRAPHY STYING ---------------------------------
+
+h1, a-h1 {
+  font-size: calc( #{$h1-min-xs}px + (#{$h1-max-xs} - #{$h1-min-xs}) * ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs})));
+  font-family: $proxima-bold; line-height: 42px; font-weight: bold; color: $grey-15; margin-bottom: 30px;
+}
+
+h2, .a-h2 {
+  font-size: calc( #{$h2-min-xs}px + (#{$h2-max-xs} - #{$h2-min-xs}) * ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs})));
+  font-family: $proxima-bold; line-height: 36px; font-weight: bold; color: $grey-15; margin-bottom: 30px; 
+}
+
+h3, .a-h3 {
+  font-size: calc( #{$h3-min-xs}px + (#{$h3-max-xs} - #{$h3-min-xs}) * ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs})));
+  font-family: $proxima-bold; line-height: 30px; font-weight: bold; color: $grey-15; margin-bottom: 30px;
+}
+
+h4, .a-h4 {
+  font-size: calc( #{$h4-min-xs}px + (#{$h4-max-xs} - #{$h4-min-xs}) * ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs})));
+  font-family: $proxima-bold; line-height: 28px; font-weight: bold; color: $grey-15; margin-bottom: 30px;
+}
+
+h5, .a-h5 {
+  font-family: $proxima-bold; font-size: 19px; line-height: 26px; font-weight: bold; color: $grey-15; margin-bottom: 30px;
+}
+
+h6, .a-h6 {
+  font-family: $proxima-bold; font-size: 18px; line-height: 16px; font-weight: bold; color: $grey-15; margin-bottom: 30px;
+}
+
+p, .a-p {
+  font-size: calc( #{$p-min-xs}px + (#{$p-max-xs} - #{$p-min-xs}) * ((100vw - #{$view-min-xs}px) / (#{$view-max-xs} - #{$view-min-xs})));
+  font-family: $proxima-regular; line-height: 24px; font-weight: 400; color: $grey-67; margin-bottom: 30px;
+
+  &._small { font-size: 14px; line-height: 24px; }
+  &:last-of-type { margin-bottom: 0px; }
+}
+
+.a-img { max-width: 100%; height: auto; }
+
+.component-wrap ul, ol { padding: 0px; margin: 0px; }
+
+.component-wrap ul { list-style: none; margin-top: 40px;
+  li { 
+    display: block; position: relative; padding-left: 35px; font-family: $proxima-regular; line-height: 24px; font-weight: 400; 
+    font-size: 16px; color: $black; margin-bottom: 15px;
+    &:before { 
+      content: ''; width: 22px; height: 22px; background-image: url('/dist/images/icons/icon--check.png');
+      background-repeat: no-repeat; background-size: 22px; left: 0px; top: 3px; position: absolute;
+    }
+    &:last-child { margin-bottom: 0px; }
+  }
+}
+
+// A.3. END -----------------------------------------------
+
+// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// B. MIN-WIDTH: 576px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xs-up) {}
+
+// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($sm-up) {
+  
+  hr { margin: 40px 0px; }
+
+  // A.3. TYPOGRAPHY STYING ---------------------------------
+
+  h1, .a-h1 {
+    font-size: calc( #{$h1-min-sm}px + (#{$h1-max-sm} - #{$h1-min-sm}) * ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm})));
+  }
+
+  h2, .a-h2 {
+    font-size: calc( #{$h2-min-sm}px + (#{$h2-max-sm} - #{$h2-min-sm}) * ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm})));
+  }
+
+  h3, .a-h3 {
+    font-size: calc( #{$h3-min-sm}px + (#{$h3-max-sm} - #{$h3-min-sm}) * ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm})));
+  }
+
+  h4, .a-h4 {
+    font-size: calc( #{$h4-min-sm}px + (#{$h4-max-sm} - #{$h4-min-sm}) * ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm})));
+  }
+
+  p, .a-p {
+    font-size: calc( #{$p-min-sm}px + (#{$p-max-sm} - #{$p-min-sm}) * ((100vw - #{$view-min-sm}px) / (#{$view-max-sm} - #{$view-min-sm})));
+  }
+
+  // A.3. END -----------------------------------------------
+
+}
+
+// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($md-up) {
+  
+  hr { margin: 50px 0px; }
+
+  // Add padding top top of page for navigation
+  body { padding-top: 75px; }
+
+  // A.3. TYPOGRAPHY STYING ---------------------------------
+
+  h1, .a-h1 { 
+    font-size: calc( #{$h1-min-md}px + (#{$h1-max-md} - #{$h1-min-md}) * ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md})));
+    line-height: 56px; 
+  }
+
+  h2, .a-h2 {
+    font-size: calc( #{$h2-min-md}px + (#{$h2-max-md} - #{$h2-min-md}) * ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md})));
+    line-height: 46px;
+  }
+
+  h3, .a-h3 {
+    font-size: calc( #{$h3-min-md}px + (#{$h3-max-md} - #{$h3-min-md}) * ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md})));
+    line-height: 38px;
+  }
+
+  h4, .a-h4 {
+    font-size: calc( #{$h4-min-md}px + (#{$h4-max-md} - #{$h4-min-md}) * ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md})));
+    line-height: 30px;
+  }
+
+  h5, .a-h5 { font-size: 20px; line-height: 30px; }
+
+  p, .a-p {
+    font-size: calc( #{$p-min-md}px + (#{$p-max-md} - #{$p-min-md}) * ((100vw - #{$view-min-md}px) / (#{$view-max-md} - #{$view-min-md})));
+    line-height: 30px;
+  }
+
+  .component-wrap ul { margin-top: 50px;
+    li { line-height: 30px; font-size: 18px; margin-bottom: 20px;
+      &:before { top: 5px; }
+      &:last-child { margin-bottom: 0px; }
+    }
+  }
+
+  // A.3. END -----------------------------------------------
+
+}
+
+// D. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// E. MIN-WIDTH: 1024px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($mdl-up) {}
+
+// E. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// F. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($lg-up) {
+  
+  hr { margin: 60px 0px; }
+
+  // A.3. TYPOGRAPHY STYING ---------------------------------
+
+  h1, .a-h1 { font-size: $h1-max+px; }
+
+  h2, .a-h2 { font-size: $h2-max+px; }
+
+  h3, .a-h3 { font-size: $h3-max+px; }
+
+  h4, .a-h4 { font-size: $h4-max+px; }
+  
+  p, .a-p { font-size: $p-max+px; }
+
+  // A.3. END -----------------------------------------------
+
+}
+
+// F. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// G. MIN-WIDTH: 1400px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xlg-up) {
+  
+  hr { margin: 70px 0px; }
+
+  // Match container width from design
+  .container { max-width: 1200px; }
+
+}
+
+// G. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################

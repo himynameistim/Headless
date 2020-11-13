@@ -1,0 +1,64 @@
+// ELEMENTS [ 0.2. TYPOGRAPHY ]  ######################################################################################
+
+// A. FONT SOURCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@font-face {
+    font-family: ProximaNova-Black;
+    src: local('ProximaNova-Black'), url('/fonts/ProximaNova-Black.otf') format("opentype");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ProximaNova-Bold;
+    src: local('ProximaNova-Bold'), url('/fonts/ProximaNova-Bold.otf') format("opentype");
+    font-weight: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ProximaNova-Extrabold;
+    src: local('ProximaNova-Extrabold'), url('/fonts/ProximaNova-Extrabold.otf') format("opentype");
+    font-weight: 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ProximaNova-Light;
+    src: local('ProximaNova-Light'), url('/fonts/ProximaNova-Light.otf') format("opentype");
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ProximaNova-Regular;
+    src: local('ProximaNova-Regular'), url('/fonts/ProximaNova-Regular.otf') format("opentype");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ProximaNova-Semibold;
+    src: local('ProximaNova-Semibold'), url('/fonts/ProximaNova-Semibold.otf') format("opentype");
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ProximaNova-Thin;
+    src: local('ProximaNova-Thin'), url('/fonts/ProximaNova-Thin.otf') format("opentype");
+    font-weight: 100;
+    font-display: swap;
+}
+
+$proxima-black:       ProximaNova-Black, helvetica, arial, sans-serif;
+$proxima-bold:        ProximaNova-Bold, helvetica, arial, sans-serif;
+$proxima-extrabold:   ProximaNova-Extrabold, helvetica, arial, sans-serif;
+$proxima-light:       ProximaNova-Light, helvetica, arial, sans-serif;
+$proxima-regular:     ProximaNova-Regular, helvetica, arial, sans-serif;
+$proxima-semibold:    ProximaNova-Semibold, helvetica, arial, sans-serif;
+$proxima-thin:        ProximaNova-Thin, helvetica, arial, sans-serif;
+
+// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################

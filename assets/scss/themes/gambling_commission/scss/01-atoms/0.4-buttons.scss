@@ -1,0 +1,189 @@
+// ELEMENTS [ 0.4. BUTTONS ] ##########################################################################################
+
+// A. MOBILE STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// A.1. A-BTN STYLING -------------------------------------
+
+.a-btn {
+  font-family: $proxima-bold; font-size: 16px; line-height: 24px; padding: 12px 32px; cursor: pointer;
+  display: inline-block; text-align: center; text-decoration: none; transition: all 0.3s ease-in-out;
+  font-weight: bold; border-radius: 4px; text-shadow: none; border: none; min-height: 48px; outline: none;
+  color: $white; background-color: $black;
+
+  &:hover, &:focus, &:active {
+    &:not(:disabled), &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus {
+      background-color: saturate($black, 10%); text-decoration: none; outline: none; border: none;
+      box-shadow: none;
+    }
+  }
+  &:active { background-color: desaturate($black, 25%); }
+
+  // BUTTON COLORS --------------------------------
+
+  &.btn-primary { background-color: $blue-38; color: $white;
+    &:hover, &:focus, &:active { 
+      &:not(:disabled), &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus { 
+        background-color: desaturate( $blue-38, 15% ); color: $white; 
+      }
+    }
+    &:active { background-color: desaturate( $blue-38, 30% ); }
+  }
+
+  // BUTTON SIZES ---------------------------------
+
+  &._small { min-height: 51px; box-shadow: none; padding: 17.5px 13px; }
+}
+
+// A.1. END -----------------------------------------------
+
+// A.2. A-LINK STYLING ------------------------------------
+
+.a-link { 
+  font-family: $proxima-semibold; font-size: 15px; line-height: 1.2; color: $white; text-decoration: none; 
+  font-weight: 500; display: inline-block; transition: all ease-in-out 0.3s;
+
+  span { display: inline-block; position: relative; transition: all 0.3s ease-in-out;
+    &:after {
+      content: ''; background-color: $white; height: 1px; bottom: -1px;
+      position: absolute; left: 0px; transition: all ease-in-out 0.3s; right: 120%;
+    }
+  } 
+
+  &:hover, &:focus { color: $white; text-decoration: underline; 
+    span {
+      &:after { right: 0px; } 
+    }
+  }
+
+  // BUTTON SIZES ---------------------------------
+
+  &._small { font-family: $proxima-regular; font-size: 14px; line-height: 24px; }
+}
+
+// A.2. END -----------------------------------------------
+
+// A.3. A-SOCIAL STYLING ----------------------------------
+ 
+.a-social { display: inline-block; text-decoration: none;
+  svg path { transition: all ease-in-out 0.3s; }
+  &:hover, &:focus {}
+
+  // BUTTON TYPE ----------------------------------
+
+  &._facebook svg { height: 15px; width: 50px;
+    &:hover, &:focus {      
+      path { fill: $facebook; }
+    }
+  }
+  &._twitter svg { height: 15px; width: 50px; 
+    &:hover, &:focus {      
+      path { fill: $twitter; }
+    }
+  }
+  &._linkedin svg { height: 15px; width: 50px;
+    &:hover, &:focus {      
+      path { fill: $linkedin; }
+    }
+  }
+}
+
+// A.3. END -----------------------------------------------
+
+// A.4. A-NEXT STYLING ------------------------------------
+
+.a-next { 
+  font-family: $proxima-regular; font-size: 18px; line-height: 30px; color: $grey-15; text-decoration: none; 
+  font-weight: 400; position: relative; display: inline-block; transition: all ease-in-out 0.3s; padding-right: 30px; 
+
+  &:after {
+    content: ''; position: absolute; top: 50%; transform: translateY(-50%); right: 0px;
+    background-image: url('/dist/images/icons/icon--arrow_next.svg'); height: 20px; width: 22px;
+    background-position: center center; background-repeat: no-repeat; background-size: contain;
+    transition: all ease-in-out 0.3s; 
+  }
+
+  &:hover, &:focus { color: $grey-15; text-decoration: none;
+    &:after { right: -5px; }
+  } 
+}
+
+// A.4. END -----------------------------------------------
+
+// A.5. A-SWIPER-BUTTON STYLING ---------------------------
+
+.a-swiper-button {
+  box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.04), 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 3px 6px rgba(0, 0, 0, 0.08);
+  display: inline-block; background: $white; border-radius: 12px; height: 50px; width: 50px; border-radius: 50px;
+  position: relative; cursor: pointer; text-decoration: none; padding: 0px; margin: 0px; outline: none; 
+  transition: all ease-in-out 0.3s; 
+
+  &:after {
+    content: ''; height: 20px; width: 20px; position: absolute; top: 50%; left: 50%; background-position: center center; 
+    transform: translateY(-50%) translateX(-50%); background-repeat: no-repeat; background-size: 20px;
+  }
+  
+  &.a-swiper-next::after { background-image: url('/dist/images/icons/icon--arrow_next.svg'); }
+  &.a-swiper-prev::after { 
+    background-image: url('/dist/images/icons/icon--arrow_next.svg'); transform: rotate(180deg) translateY(50%) translateX(50%); 
+  }
+
+  &:hover, &:focus { background-color: $yellow-ff; }
+
+  &.disabled { cursor: not-allowed; background-color: $grey-de; 
+    &:hover, &:focus { background-color: $grey-de; }
+  } 
+
+  &.hidden { display: none; } 
+}
+
+// A.5. END -----------------------------------------------
+
+// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// B. MIN-WIDTH: 576px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xs-up) {}
+
+// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($sm-up) {}
+
+// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($md-up) {  
+
+  // A.5. A-SWIPER-BUTTON STYLING ---------------------------
+
+  .a-swiper-button { height: 70px; width: 70px; border-radius: 70px;                      
+    &:after { height: 30px; width: 30px; background-size: 30px; }
+  }
+
+  // A.5. END -----------------------------------------------
+
+}
+
+// D. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// E. MIN-WIDTH: 1024px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($mdl-up) {}
+
+// E. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// F. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($lg-up) {}
+
+// F. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// G. MIN-WIDTH: 1400px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xlg-up) {}
+
+// G. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################

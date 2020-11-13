@@ -1,0 +1,13 @@
+.o-stats {
+    &:after {
+      content: ''; position: absolute; bottom: 0px; right: 0px; left: 0px; background: $grey; 
+      min-height: 190px; z-index: -2;
+    }
+
+    .m-stat-card { 
+        &:after {
+          content: ''; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: -1;
+          box-shadow: 0 4px 20px rgba($black,.05); border-radius: 4px; 
+        }
+      }
+}  

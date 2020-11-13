@@ -1,8 +1,8 @@
 <template>
-  <section>
+  <main>
     <!-- Slices block component -->
     <slices-block :slices="slices"/>
-  </section>
+  </main>
 </template>
 
 <script>

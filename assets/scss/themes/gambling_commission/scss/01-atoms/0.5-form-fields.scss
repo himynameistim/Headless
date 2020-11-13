@@ -1,0 +1,130 @@
+// ELEMENTS [ 0.5. FORM FIELDS ] ######################################################################################
+
+// A. MOBILE STYLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// A.0. BASE STYLING --------------------------------------
+
+body .umbraco-forms-form { padding: 0px;
+  .umbraco-forms-fieldset, .umbraco-forms-navigation { padding: 0px; margin: 0px;
+    .umbraco-forms-field { width: 100%;
+      .umbraco-forms-field-wrapper { position: relative; }
+    }
+  }
+}
+
+// A.0. END -----------------------------------------------
+
+// A.1. GLOBAL STYLING ------------------------------------
+
+.umbraco-forms-form {
+  .a-form-field { margin-bottom: 20px;
+
+     // TEXT FIELDS AND TEXTAREA
+    .a-input, input.text, textarea {
+      position: relative; width: 100%; max-width: 100% !important; padding: 8px 12px; background: $white;
+      border: 1px solid $grey-c4d; border-radius: 4px; outline: none; font-family: $proxima-regular;
+      font-weight: 400; line-height: 30px; color: $grey-15; font-size: 18px; margin: 0px; height: 48px;
+
+      &:focus, &:active { border-color: $grey-15; }
+    }
+
+    // CHECKBOX
+    .a-checkbox { visibility: hidden; position: fixed; top: 0; left: 0;
+
+      + label { 
+        position: relative; font-family: $proxima-regular; font-weight: normal; font-size: 14px; margin: 0px;
+        line-height: 20px; color: $grey-67; padding-left: 25px; display: block; cursor: pointer;
+
+        &:before {
+          content: ''; position: absolute; width: 20px; height: 20px; background: $white; left: 0px;
+          top: 0px; border: 1px solid $grey-c4d; border-radius: 4px; transition: all ease-in-out 0.3s;
+        }
+      }
+
+      &:checked {
+        + label {
+          &:before { border-color: $yellow-ff; background-color: $yellow-ff; }
+        }
+      }
+    }
+
+    // SELECT TAG
+    .a-select {
+      position: relative; width: 100%; max-width: 100% !important; padding: 11.5px 12px; background: $white;
+      border: 1px solid $grey-c4d; border-radius: 4px; outline: none; font-family: $proxima-regular;
+      font-weight: 400; line-height: 1; color: $grey-92; font-size: 18px; margin: 0px; opacity: 1;
+      -webkit-appearance: none; -moz-appearance: none; height: 48px; text-overflow: '';
+      background-image: url('/dist/images/icons/icon--arrow-down.svg'); background-position: 97% 20px;
+      background-repeat: no-repeat; padding-right: 45px; background-size: 17px;
+
+      &::-ms-expand { display: none; }
+      &:focus, &:active { border-color: $grey-15; }
+    }
+
+    // TEXTAREA
+    textarea.a-input { height: 100%; max-height: 137px; min-height: 137px; }
+
+    // PLACEHOLDERS
+    ::-webkit-input-placeholder { color: $grey-92 !important; opacity: 1; }
+    ::-moz-placeholder { color: $grey-92 !important; opacity: 1; }
+    :-ms-input-placeholder { color: $grey-92 !important; opacity: 1; }
+    :-moz-placeholder { color: $grey-92 !important; opacity: 1; }
+    ::placeholder { color: $grey-92 !important; opacity: 1; }
+
+    &._btn-wrap { margin-bottom: 0px; }
+  }
+}
+
+// A.1. END -----------------------------------------------
+
+
+// A.2. ERROR MESSAGES ------------------------------------
+
+body .umbraco-forms-form {
+  span.field-validation-error { 
+    font-size: 11px; padding: 0px; position: relative; top: -15px; display: block; color: #e20a0a !important;
+  }
+}
+
+// A.2. END -----------------------------------------------
+
+
+// A. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// B. MIN-WIDTH: 576px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xs-up) {}
+
+// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($sm-up) {}
+
+// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($md-up) {}
+
+// D. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// E. MIN-WIDTH: 1024px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($mdl-up) {}
+
+// E. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// F. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($lg-up) {}
+
+// F. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// G. MIN-WIDTH: 1400px +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@media ($xlg-up) {}
+
+// G. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################

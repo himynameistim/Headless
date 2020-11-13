@@ -42,7 +42,16 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["@/assets/css/resetr.css", "@/assets/css/common.css"],
+  css: [
+  '~/assets/scss/themes/global/css/1.0-bootstrap.min.css',
+  '~/assets/scss/themes/global/css/2.0-swiper.css',
+  '~/assets/scss/themes/innovate_uk/scss/01-atoms/0.3-global.scss',
+  '~/assets/scss/themes/innovate_uk/scss/01-atoms/0.4-buttons.scss',
+  '~/assets/scss/themes/innovate_uk/scss/01-atoms/0.5-form-fields.scss',
+  '~/assets/scss/themes/innovate_uk/scss/02-organism/0.1-global.scss',
+  '~/assets/scss/themes/innovate_uk/scss/02-organism/0.2-nav.scss',
+  '~/assets/scss/themes/innovate_uk/scss/02-organism/0.3-footer.scss',
+  '~/assets/scss/themes/innovate_uk/scss/03-components/01-stats.scss',],
 
   /*
    ** Plugins to load before mounting the App
@@ -79,5 +88,12 @@ export default {
 
   generate: {
     fallback: "404.html" // Netlify reads a 404.html, Nuxt will load as an SPA
-  }
+  },
+
+  styleResources: {
+    scss: [
+        '~/assets/scss/themes/global/css/0.0-custom-variables.scss',
+        '~/assets/scss/themes/innovate_uk/scss/01-atoms/0.2-typography.scss',
+    ]
+}
 };
