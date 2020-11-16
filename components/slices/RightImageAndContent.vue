@@ -8,7 +8,7 @@
 
                           {{ $prismic.asText(slice.primary.body1) }}
 
-                        <p><prismic-link :field="slice.primary.link" class="a-btn btn-primary"></prismic-link></p>
+                              <p v-if="$prismic.asLink(slice.primary.link)"><prismic-link :field="slice.primary.link" class="a-btn btn-primary">{{ $prismic.asText(slice.primary.link_text) }}</prismic-link></p>
                   </div>
               </div>
               <div class="col-12 col-lg-6 m-col-image">

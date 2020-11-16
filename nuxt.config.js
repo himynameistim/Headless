@@ -83,6 +83,9 @@ export default {
     extend(config, ctx) {
       // to transform link with <nuxt-link> for the htmlSerializer
       config.resolve.alias["vue"] = "vue/dist/vue.common";
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
     }
   },
 

@@ -9,6 +9,7 @@
                       <source srcset="@Url.GetCropUrl((IPublishedContent)Model.Image, "Content Small Tablet")" media="(min-width: 576px)">
                       <source srcset="@Url.GetCropUrl((IPublishedContent)Model.Image, "Content Mobile")" media="(min-width: 400px)">
                       <source srcset="@Url.GetCropUrl((IPublishedContent)Model.Image, "Content Small Mobile")" media="(min-width: 0px)">-->
+                      <source :srcset="slice.primary.image.ContentDesktop" media="(min-width: 992px)">
                       <img class="a-img" :src="slice.primary.image.url" />
                   </picture>
               </div>
@@ -18,7 +19,8 @@
 
                           {{ $prismic.asText(slice.primary.body1) }}
 
-                        <p v-if="slice.primary.link"><prismic-link :field="slice.primary.link" class="a-btn btn-primary"></prismic-link></p>
+
+                        <p v-if="$prismic.asLink(slice.primary.link)"><prismic-link :field="slice.primary.link" class="a-btn btn-primary">{{ $prismic.asText(slice.primary.link_text) }}</prismic-link></p>
                   </div>
               </div>
           </div>
@@ -29,7 +31,19 @@
 <script>
 export default {
   props: ['slice'],
-  name: 'left-image-and-content'
+  name: 'left-image-and-content',
+  created () {
+  },
+  methods: {
+    log(obj) {
+      console.log(obj);
+    },
+    getImageUrl(obj, size) {
+      if (size = "ContentDesktop") {
+        return obj.ContentDesktop.url;
+      }
+    }
+  }
 }
 </script>
 
