@@ -4,7 +4,7 @@
     <nav class="o-nav" role="navigation">
             <div class="container">
                 <div class="nav-wrap">
-                    <a class="a-nav-logo" href="/"><img class="a-img" src="~assets/img/logo-dark.svg" /></a>
+                    <!--<a class="a-nav-logo" href="/"><img class="a-img" src="~assets/img/logo-dark.svg" /></a>-->
                     <ul class="m-nav-list">
                       <li v-for="menuLink in $store.state.menu.menu_links" :key="menuLink.id">
                         <prismic-link :field="menuLink.link" class="a-nav-link"><span>{{ $prismic.asText(menuLink.label) }}</span></prismic-link>
